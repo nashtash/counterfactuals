@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks!
+    -->
+
+    <!-- SEO -->
+    <title>Machine Learning</title>
+    <meta name="description" content="Example-Based Explanations: Counterfactual Explanations">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="../static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/svg-icons.css">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+
+    <main role="main">
+      <article id="webslides">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section class="bg-black-blue aligncenter">
+          <!--.wrap = container (width: 90%) with fadein animation -->
+          <div class="wrap">
+            <p class="text-subtitle">Machine Learning: Example-Based Explanations</p>
+            <h1 class="text-landing">Counterfactual Explanations</h1>
+            
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="aligncenter">
+            <h2>"Example-based explanation methods select<br> particular instances of the dataset to explain<br> the behavior of machine learning models<br> or to explain the underlying data distribution."</h2>
+            <br>
+            <p class="alignleft">- Christopher Molnar</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <img class="alignleft size-50" src="../demos/Conceptual_Thinking_by_Andy_McMahon.jpg">
+            <h2>Counterfactual Explanations</h2>
+            <p><code>by Andy McMahon</code></p>
+            <p>A counterfactual explanation explains a causal condition in the form:  “If <strong>X</strong> had not occurred, <strong>Y</strong> would not have occurred”</p>
+            <p>We need a hypothetical reality</p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+<!--CODE HIER EINGEBEN-->
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <p class="text-intro"> The counterfactual explanations can be used in interpretable machine learning to <strong> understand predictions of individual instances</strong>. The <strong>"event"</strong> is an instance's predicted outcome, the <strong>"causes"</strong> are this instance's specific feature values that were input into the model, and "caused" a certain prediction.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <img class="alignleft size-200" src="../demos/graph.jpg">
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <span class="bg-white"></span>
+          <div class="wrap size-100">
+            <h3 class="fullscreen">Generating Counterfactual Explanations</h3>
+            <br>
+            <br>
+            <p>Simple approach is trail and error. <br>randomly changing feature values of the instance of interest and stopping when the desired output is predicted</p>
+            <p>"First, we define a loss function that takes as input the instance of interest, a counterfactual and the desired (counterfactual) outcome. The loss measures how far the predicted outcome of the counterfactual is from the predefined outcome and how far the counterfactual is from the instance of interest. We can either optimize the loss directly with an optimization algorithm or by searching around the instance, as suggested in the 'Growing Spheres' method (see Software and Alternatives)".</p>
+
+          </div>
+        </section>
+
+
+        <section>
+            <div class="content-center">
+              <h3 class="slide-top">Generating Counterfactuals</h3>
+              <h4>First of all we need to find out the loss.</h4>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+                <h3><strong>L( x, x′, y′, λ)</strong>=λ⋅( ^f( x′) −y′)²+ d( x, x′)</h3>
+                <br>
+                <br>
+                <br>
+                
+          </div>
+          </section>
+
+
+
+          <section>
+              <div class="content-center">
+                  <h4>quardic distance of the prediciton modell <strong>x'</strong> and the desired outcome <strong>y'</strong></h4>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                  <h3>L( x, x′, y′, λ)=<strong> λ⋅(^f( x′) −y′)²</strong> + d( x, x′)</h3>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="content-center">
+                    <h4>Distance <strong>d</strong> between the instance <strong>x</strong> and the desired outcome <strong>x'</strong></h4>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                    <h3>L( x, x′, y′, λ) =λ⋅( ^f( x′) −y′)²<strong> + d( x, x′)</strong></h3>
+                    
+                    
+              </div>
+              </section>
+
+         <section>
+              <div class="content-center">
+                <h3 class="slide-top">Choosing a tolerance</h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                  <h3>| ^f( x′) −y′|≤ ϵ</h3>
+                  
+            </div>
+            </section>
+
+
+            <section>
+                <div class="content-center">
+                  <h3 class="slide-top">Minimising the loss function</h3>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                    <h3>max λ L( x, x′, y′, λ)</h3>
+                    
+              </div>
+              </section>
+
+
+              <section>
+                  <div class="content-center">
+                    <h3 class="slide-top">Measuring the distance between instance <strong>x</strong> and counterfactual <strong>x’</strong></h3>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img class="aligncenter size-1000" src="../demos/distance.png">
+                      
+                </div>
+                </section>
+
+                <section>
+                    <div class="content-center">
+                      <h3 class="slide-top">The absolute differences of feature values between instance <strong>x</strong> and counterfactual <strong>x’</strong></h3>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <img class="aligncenter size-1000" src="../demos/mad.png">
+                        
+                  </div>
+                  </section>
+
+                  <section>
+                      <div class="alignleft">
+                        <p><strong> 1. Select an instance x to be explained, the desired outcome y’, a tolerance ϵ and a (low) initial value for λ.</strong></p>
+                     
+                        <p><strong> 2. Sample a random instance as initial counterfactual.</strong></p>
+                      
+                        <p><strong> 3. Optimize the loss with the initially sampled counterfactual as starting point.</strong></p>
+                        
+                        <p><strong> 4. While |^f(x′)−y′|> ϵ:</strong></p>
+                       
+                        <p> - Increase λ.</p>
+                       
+                        <p> - Return the counterfactual that minimizes the loss.</p>
+                      
+                        <p> - Optimize the loss with the current counterfactual as starting point.</p>
+                     
+                        <p><strong> 5. Repeat steps 2-4 and return the list of counterfactuals or the one that minimizes the loss.</strong></p>
+                          
+                    </div>
+                    </section>
+      
+                    <section>
+                        <div class="content-center size-500">
+                         
+                            <pre>library("iml")<br>library("caret")<br>#download the data from this link<br><br>download.file("https://github.com/christophM/interpretable-ml-book/raw/master/data/bike.RData", "bike.RData")
+                              <br>#load the data into Rstudio<br>load("bike.RData")<br><br>#set the ntree<br>ntree = 30<br>#Choose the feature value<br>bike.train.x = bike[names(bike) != 'cnt']<br>#set the seed as control tool<br>set.seed(1)<br><br>#the model<br>model <- caret::train(bike.train.x, bike$cnt, method = 'rf', ntree=ntree, maximise = FALSE)<br><br>
+                            
+                            </pre>
+                      </div>
+                      </section>
+
+                      <section>
+                          <div class="content-center size-500">
+                           
+                              <pre>#Choose instance value<br>cfInstances <- bike[bike$days_since_2011==260,]<br><br>#Allocate new Value<br>cfInstances$temp <- 30<br><br>#Change more values<br>cfInstances$windspeed <- 0<br>predict(model, newdata=cfInstances)<br>cfInstances<br><br>#was sollte passieren, damit weniger Bikes ausgeliehen werden -> bitte finden Sie den minimalsten Wert.</pre>
+                        </div>
+                        </section>
+
+                  
+       
+        <section class="aligncenter">
+          <div class="wrap">
+            <h1 class="text-landing">Thank you!</h1>
+          </div>
+          <footer>By Natalie Sablowski</footer>
+         </section>
+
+         <section>
+            <div >
+              <footer><strong>Refereces</strong><br><br>Molnar, Christoph. "Interpretable machine learning. A Guide for Making Black Box Models Explainable", 2019. https://christophm.github.io/interpretable-ml-book/.</footer>
+            </div>
+           </section>
+
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="../static/js/webslides.js"></script>
+
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="../static/js/svg-icons.js"></script>
+
+  </body>
+</html>
